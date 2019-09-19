@@ -36,6 +36,9 @@
     <ClInclude Include="inc\TreeNode.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="inc\PriorityQueue.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
