@@ -79,7 +79,7 @@ template<class T, class K>
 void PriorityQueue<T, K>::ShiftDown(int n)
 {
 	PriorityQueueNode<T, K>* v = _heap[n];
-	for (int n2 = n * 2; n2 < _count; n = n2, n2 *= 2)
+	for (int n2 = n * 2+1; n2 < _count; n = n2, n2 *= 2+1)
 	{
 		if (n2 + 1 < _count && Compare(_heap[n2 + 1], _heap[n2]) > 0)
 			++n2;

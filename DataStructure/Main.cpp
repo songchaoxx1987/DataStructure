@@ -53,24 +53,24 @@ void PrioirtyQueueTest()
 		v.push_back(new PNode(v2[i]));
 	}
 
-	for (int i = 0; i < v.size(); ++i)
-	{
-		printf("push %d\n", v[i]->_data);
-		pQueue.Push(v[i],v[i]->_data);
-		pQueue.Print();
-		printf("\n**********************\n");
-	}
-
-	for (int i = 0; i < v.size()+5; ++i)
-	{		
-		PNode *p = pQueue.Pop();
-		if (p == NULL)
-			printf("pop null");
-		else
-			printf("pop %d\n", p->_data);
-		pQueue.Print();
-		printf("\n**********************\n");
-	}
+// 	for (int i = 0; i < v.size(); ++i)
+// 	{
+// 		printf("push %d\n", v[i]->_data);
+// 		pQueue.Push(v[i],v[i]->_data);
+// 		pQueue.Print();
+// 		printf("\n**********************\n");
+// 	}
+// 
+// 	for (int i = 0; i < v.size()+5; ++i)
+// 	{		
+// 		PNode *p = pQueue.Pop();
+// 		if (p == NULL)
+// 			printf("pop null");
+// 		else
+// 			printf("pop %d\n", p->_data);
+// 		pQueue.Print();
+// 		printf("\n**********************\n");
+// 	}
 
 	PriorityQueue<int, int> pQueue2;
 	for (int i = 0; i < v2.size(); ++i)
