@@ -4,34 +4,62 @@
 #include "stdafx.h"
 #include "inc/AVLTree.h"
 #include "inc/PriorityQueue.h"
+#include "inc/Algorithm.h"
 #include <vector>
 #include <time.h>
 
 void AVLTreeTest();
 void PrioirtyQueueTest();
+void Sort_Test();
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//AVLTreeTest();
-	PrioirtyQueueTest();
+	//PrioirtyQueueTest();
+	Sort_Test();
 	getchar();
 	return 0;
 }
 
-void randomArray(int size, std::vector<int> *pV)
+
+
+void Sort_Test()
 {
-	pV->clear();
-	srand((unsigned)time(NULL));	
 	std::vector<int> v;
-	for (int i = 0; i < size; ++i)
-	{
-		v.push_back(i);
-	}
-	while (!v.empty())
-	{
-		int i = rand() % v.size();
-		pV->push_back(v[i]);
-		v.erase(std::begin(v) + i);
-	}	
+	randomArray(10, &v);
+	PrintVector(&v);
+
+ 	std::vector<int> v2 = v;	
+ 	bubble_sort(&v2);
+ 	printf("after bubble\n");
+ 	PrintVector(&v2);
+ 
+ 
+ 	v2 = v;
+ 	q_sort(&v2, 0, v2.size() - 1);
+ 	printf("after q_sort\n");
+ 	PrintVector(&v2);
+
+	v2 = v;
+	insert_sort(&v2);
+	printf("after insert_sort\n");
+	PrintVector(&v2);
+	printf("\n");
+
+	v2 = v;
+	shell_sort(&v2,v2.size()/2);
+	printf("after shell_sort\n");
+	PrintVector(&v2);
+
+	v2 = v;
+	select_sort(&v2);
+	printf("after select_sort\n");
+	PrintVector(&v2);
+
+	printf("\n");
+	v2 = v;
+	heap_sort(&v2);
+	printf("after heap_sort\n");
+	PrintVector(&v2);
 }
 
 class PNode
